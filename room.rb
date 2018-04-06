@@ -20,7 +20,7 @@ attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
 
 
   def check_in(guest)
-    if can_pay_entry?(guest)
+    if !room_full && can_pay_entry?(guest)
       guest.money -= @fee
       @till += @fee
       @guest.push(guest)
