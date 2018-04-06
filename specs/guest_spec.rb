@@ -10,4 +10,15 @@ def setup()
 
 end
 
+def test_check_guest_name
+assert_equal("Dave", @guest.name)
+end
+
+def test_check_guest_money
+assert_equal(50, @guest.money)
+end
+
+# def test_check_fav_song
+# assert_equal("Monkey Wrench", @song.fav_song)
+# end
 end
