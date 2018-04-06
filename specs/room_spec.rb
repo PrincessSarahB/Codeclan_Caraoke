@@ -64,6 +64,12 @@ end
 assert_equal(105.00, @room.till)
   end
 
+def test_till_money_goes_up__guest_goes_down
+@room.check_in(@guest1)
+assert_equal(105.00, @room.till)
+assert_equal(45.00, @guest1.money)
+end
+
   def test_room_capacity_full_return_true
 @room.check_in(@guest1)
 @room.check_in(@guest2)
