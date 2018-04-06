@@ -10,5 +10,16 @@ def setup()
 
 end
 
+def test_song_title
+assert_equal("Monkey Wrench", @song.title)
+
+end
+
+
+def test_song_artist
+
+assert_equal("Foo Fighters", @song.artist_name)
+end
+
 
 end
