@@ -24,6 +24,9 @@ attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
       guest.money -= @fee
       @till += @fee
       @guest.push(guest)
+      return true
+    else
+    return false
     end
   end
 

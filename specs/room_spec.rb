@@ -9,6 +9,7 @@ class RoomTest < MiniTest::Test
     @guest1 = Guest.new("Dave", 50.00)
     @guest2 = Guest.new("Jordyn", 60.00)
     @guest3 = Guest.new("Virginia", 40.00)
+    @guest4 = Guest.new("Violet", 20.00)
     @guest = [@guest1, @guest2, @guest3]
     @song1 = Song.new("Monkey Wrench", "Foo Fighters")
     @song2 = Song.new("Song 2", "Blur")
@@ -67,6 +68,13 @@ assert_equal(105.00, @room.till)
 assert_equal(true, @room.room_full)
   end
 
+def test_guest_checks_in__room_full
+  @room.check_in(@guest1)
+  @room.check_in(@guest2)
+  @room.check_in(@guest3)
+assert_equal(false, @room.check_in(@guest4))
+
+end
 
 
 end
