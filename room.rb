@@ -1,50 +1,52 @@
+
 class Room
+attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
+  def initialize(room_name, guest, till, song, room_capacity, fee)
 
-def initialize(room_name, guest, till, song, room_capacity)
+    @room_name = room_name
+    @guest = []
+    @till = till
+    @song = []
+    @room_capacity = room_capacity
+    @fee = fee
 
-@room_name = room_name
-@guest = []
-@till = till
-@song = []
-@room_capacity = room_capacity
+
+  end
 
 
-end
+  def guest_count()
+    return @guest.count
+  end
 
-def name()
-return @room_name
-end
 
-def guest_count()
-  return @guest.count
-end
+  def check_in(guest)
+      @guest.push(guest)
+    end
 
-def till_count()
-return @till
-end
+    def check_out(guest)
+      @guest.delete(guest)
+    end
 
-def check_in(guest)
-  if @room.guest_count < @room_capacity
-@guest.push(guest)
-end
+    def song()
+      return @song.count
+    end
 
-def check_out(guest)
-@guest.delete(guest)
-end
+    def add_song(song)
+      @song.push(song)
+    end
 
-def song()
-return @song.count
-end
+  #   def room_full(room)
+  #     if room.guest_count == @room_capacity
+  #       return true
+  #     else
+  #       return false
+  #     end
+  #   end
 
-def add_song(song)
-@song.push(song)
-end
-
-def room_full?(room)
-if @room_capacity == room.guest_count()
+  def can_pay_entry?(guest)
+if @fee <= guest.money
   return true
-else
-  return false
-end
-end
+  end
+  end
+
 end
