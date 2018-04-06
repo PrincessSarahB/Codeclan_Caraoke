@@ -1,10 +1,10 @@
 class Guest
 
-def initialize(name, money, song)
+def initialize(name, money)
 
 @name = name
 @money = money
-@song = song
+
 
 end
 

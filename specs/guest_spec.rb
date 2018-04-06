@@ -5,8 +5,8 @@ require_relative("../song.rb")
 class GuestTest < MiniTest::Test
 
 def setup()
-@fav_song = Song.new("Monkey Wrench", "Foo Fighters")
-@guest = Guest.new("Dave", 50, @fav_song)
+# @fav_song = Song.new("Monkey Wrench", "Foo Fighters")
+@guest = Guest.new("Dave", 50)
 
 end
 
