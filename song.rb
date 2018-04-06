@@ -7,7 +7,12 @@ def initialize(title, artist)
 
 end
 
+def title()
+return @title
+end
 
-
+def artist_name()
+return @artist
+end
 
 end
