@@ -39,13 +39,13 @@ attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
       @song.push(song)
     end
 
-  #   def room_full(room)
-  #     if room.guest_count == @room_capacity
-  #       return true
-  #     else
-  #       return false
-  #     end
-  #   end
+    def room_full()
+      if guest_count == @room_capacity
+        return true
+      else
+        return false
+      end
+    end
 
   def can_pay_entry?(guest)
 if @fee <= guest.money

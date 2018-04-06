@@ -54,11 +54,12 @@ def test_guest_money_goes_down
 @room.check_in(@guest1)
 assert_equal(45.00, @guest1.money)
 end
-#   def test_room_capacity_full_return_true()
-# @room.check_in(@guest1)
-# @room.check_in(@guest2)
-# @room.check_in(@guest3)
-# assert.equal(true, @room.room_full)
-#   end
+
+  def test_room_capacity_full_return_true
+@room.check_in(@guest1)
+@room.check_in(@guest2)
+@room.check_in(@guest3)
+assert_equal(true, @room.room_full)
+  end
 
 end
