@@ -10,7 +10,8 @@ class RoomTest < MiniTest::Test
     @guest2 = Guest.new("Jordyn", 60.00)
     @guest3 = Guest.new("Virginia", 40.00)
     @guest4 = Guest.new("Violet", 20.00)
-    @guest = [@guest1, @guest2, @guest3]
+      @guest5 = Guest.new("Harper", 4.00)
+    @guest = []
     @song1 = Song.new("Monkey Wrench", "Foo Fighters")
     @song2 = Song.new("Song 2", "Blur")
     @song = [@song1, @song2]
@@ -76,6 +77,10 @@ def test_guest_checks_in__room_full
   @room.check_in(@guest3)
 assert_equal(false, @room.check_in(@guest4))
 
+end
+
+def test_guest_checks_in__guest_cannot_pay
+assert_equal(false, @room.check_in(@guest5))
 end
 
 
