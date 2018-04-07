@@ -56,4 +56,14 @@ class Room
     end
   end
 
+  def favourite_song(guest)
+    for song in @song
+      if song.title == guest.fav_song.title && song.artist == guest.fav_song.artist
+        return "woohoo, that's my favourite song!"
+      else
+        return "booooo!"
+      end
+    end
+  end
+
 end
