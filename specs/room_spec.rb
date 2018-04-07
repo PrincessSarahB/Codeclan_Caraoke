@@ -4,6 +4,7 @@ require_relative("../room.rb")
 require_relative("../guest.rb")
 require_relative("../song.rb")
 require_relative("../bar.rb")
+require_relative("../drinks.rb")
 class RoomTest < MiniTest::Test
 
   def setup()
@@ -19,9 +20,12 @@ class RoomTest < MiniTest::Test
     @guest4 = Guest.new("Violet", 20.00, @song2)
     @guest5 = Guest.new("Harper", 4.00, @song5)
     @guest = []
-    @drink = {vodka: 5.00, beer: 3.00, wine: 4.00},
-    
-      @bar = Bar.new(@drink)
+
+    @drink1 = Drink.new("vodka", 5.00)
+    @drink2 = Drink.new("wine", 4.00)
+    @drink3 = Drink.new("beer", 3.00)
+    @drink = [@drink1, @drink2]
+    @bar = Bar.new(@drink, 100)
 
     @room = Room.new("Room 1", @guest, 100, @song, 3, 5.00, @bar)
 
@@ -108,6 +112,6 @@ class RoomTest < MiniTest::Test
   end
 
   def test_guest_can_buy_drink__has_money
-assert_equal(true, @room.can_buy_drink(@guest1))
+    assert_equal(true, @room.can_buy_drink(@guest1, @drink3))
   end
 end
