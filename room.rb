@@ -1,7 +1,7 @@
 
 class Room
-  attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
-  def initialize(room_name, guest, till, song, room_capacity, fee)
+  attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee, :bar
+  def initialize(room_name, guest, till, song, room_capacity, fee, bar)
 
     @room_name = room_name
     @guest = []
@@ -9,6 +9,7 @@ class Room
     @song = []
     @room_capacity = room_capacity
     @fee = fee
+    @bar = bar
 
 
   end
@@ -57,6 +58,7 @@ class Room
   end
 
   def favourite_song(guest)
+    # if @song.find {|title, artist| title == guest.fav_song.title && artist == guest.fav_song.artist}
     for song in @song
       if song.title == guest.fav_song.title && song.artist == guest.fav_song.artist
         return "woohoo, that's my favourite song!"
@@ -65,5 +67,11 @@ class Room
       end
     end
   end
+
+  def can_buy_drink(guest)
+if @bar.drink[:vodka] <= guest.money
+  return true
+end
+end
 
 end
