@@ -1,6 +1,6 @@
 
 class Room
-attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
+  attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
   def initialize(room_name, guest, till, song, room_capacity, fee)
 
     @room_name = room_name
@@ -26,34 +26,34 @@ attr_reader :room_name, :guest, :till, :song, :room_capacity, :fee
       @guest.push(guest)
       return true
     else
-    return false
+      return false
     end
   end
 
-    def check_out(guest)
-      @guest.delete(guest)
-    end
+  def check_out(guest)
+    @guest.delete(guest)
+  end
 
-    def song()
-      return @song.count
-    end
+  def song()
+    return @song.count
+  end
 
-    def add_song(song)
-      @song.push(song)
-    end
+  def add_song(song)
+    @song.push(song)
+  end
 
-    def room_full()
-      if guest_count == @room_capacity
-        return true
-      else
-        return false
-      end
+  def room_full()
+    if guest_count == @room_capacity
+      return true
+    else
+      return false
     end
+  end
 
   def can_pay_entry?(guest)
-if @fee <= guest.money
-  return true
-  end
+    if @fee <= guest.money
+      return true
+    end
   end
 
 end
