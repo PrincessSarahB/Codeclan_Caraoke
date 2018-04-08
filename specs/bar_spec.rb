@@ -35,4 +35,8 @@ end
 
 assert_equal(false, @bar.can_buy_drink(@drink1, @guest2))
   end
+
+  def test_find_drink_by_name
+assert_equal("vodka", @bar.find_drink_by_name("vodka"))
+  end
   end

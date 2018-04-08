@@ -15,8 +15,11 @@ else
   return false
 end
 end
-#on Sunday do this!
-def find_drink_by_name(drink)
 end
+
+def find_drink_by_name(name)
+result = @drink.find {|drink| drink.name == name}
+return result.name
 end
+
 end
