@@ -68,12 +68,6 @@ class Room
     end
   end
 
-  def can_buy_drink(guest, drink)
-    for drink in @bar
-      
-if @bar.drink[1].price <= guest.money
-  return true
-end
-end
+
 
 end

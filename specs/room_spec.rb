@@ -111,7 +111,4 @@ class RoomTest < MiniTest::Test
     assert_equal("booooo!", @room.favourite_song(@guest5))
   end
 
-  def test_guest_can_buy_drink__has_money
-    assert_equal(true, @room.can_buy_drink(@guest1, @drink3))
-  end
 end
