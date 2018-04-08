@@ -25,7 +25,7 @@ class RoomTest < MiniTest::Test
     @drink2 = Drink.new("wine", 4.00)
     @drink3 = Drink.new("beer", 3.00)
     @drink = [@drink1, @drink2]
-    @bar = Bar.new(@drink, 100)
+    @bar = Bar.new(@drink, 100, @guest)
 
     @room = Room.new("Room 1", @guest, 100, @song, 3, 5.00, @bar)
 
