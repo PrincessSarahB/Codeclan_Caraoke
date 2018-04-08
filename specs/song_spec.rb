@@ -18,7 +18,7 @@ end
 
 def test_song_artist
 
-assert_equal("Foo Fighters", @song.artist_name)
+assert_equal("Foo Fighters", @song.artist)
 end
 
 
